@@ -34,7 +34,7 @@ public class User {
 //	}
 	
 	public User() {
-		
+		System.out.println("In constructor");
 	}
 
 	public User(int userId, String userName, String userPassword, String userEmail, String userMobileNo,
