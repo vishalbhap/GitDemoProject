@@ -3,10 +3,12 @@ package com.cybage.food;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.cybage.model.User;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.cybage")
+@EnableJpaRepositories(basePackages = "com.cybage.dao")
 @EntityScan(basePackages = "com.cybage.model")
 public class FoodAppDemoGitApplication {
 
