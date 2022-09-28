@@ -5,9 +5,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 
 @Entity
 @Table(name = "user")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
 public class User {
 	@Id
 	@GeneratedValue
@@ -18,17 +29,4 @@ public class User {
 	private String userMobileNo;
 	private int attemptsCount;
 	
-	public User() {
-		System.out.println("In constructor");
-	}
-
-	public User(int userId, String userName, String userPassword, String userEmail, String userMobileNo,
-			int attemptsCount) {
-		this.userId = userId;
-		this.userName = userName;
-		this.userPassword = userPassword;
-		this.userEmail = userEmail;
-		this.userMobileNo = userMobileNo;
-		this.attemptsCount = attemptsCount;		
-	}
 }
