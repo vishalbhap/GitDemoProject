@@ -1,10 +1,8 @@
 package com.cybage.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -14,25 +12,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Entity
-@Table(name = "user")
+@Table(name="address")
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
-public class User {
+public class Address {
 	@Id
 	@GeneratedValue
-	private int userId;
-	private String userName;
-	private String userPassword;
-	private String userEmail;
-	private String userMobileNo;
-	private int attemptsCount;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "address_id")
-	private Address address;
-	
+	private int addressId;
+	private String area;
+	private String street;
+	private String pincode;
+//	@OneToOne(mappedBy = "address")
+//	private User user;
+
 }
