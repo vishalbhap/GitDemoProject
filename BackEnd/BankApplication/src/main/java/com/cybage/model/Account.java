@@ -11,21 +11,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
-@Entity
-@Table(name = "user")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
-public class User {
+@Entity
+@Table
+public class Account {
 	@Id
 	@GeneratedValue
-	private int userId;
-	private String userName;
-	private String userPassword;
-	private String userEmail;
-	private String userMobileNo;
-	private int attemptsCount;	
+	private int accountId;
+	private Long accountNumber;
+	private String type;
+	private Double balance;
 }

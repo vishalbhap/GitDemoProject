@@ -1,0 +1,26 @@
+user =>
+userId
+name
+address
+mobileNo
+accountId
+
+Account =>
+accountId
+accountNumber
+accountType
+Balance
+
+Transactions =>
+type (deposit/withdrawal)
+date
+userId
+
+
+
+
+
+
+
+		 
+	

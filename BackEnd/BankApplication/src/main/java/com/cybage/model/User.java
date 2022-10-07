@@ -3,6 +3,8 @@ package com.cybage.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -12,20 +14,22 @@ import lombok.Setter;
 import lombok.ToString;
 
 
-@Entity
-@Table(name = "user")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
+@Entity
+@Table(name = "user")
 public class User {
 	@Id
 	@GeneratedValue
 	private int userId;
-	private String userName;
-	private String userPassword;
-	private String userEmail;
-	private String userMobileNo;
-	private int attemptsCount;	
+	private String name;
+	private String address;
+	private String mobileNumber;
+		
+	@OneToOne
+	@JoinColumn(name = "accountId")
+	private Account account;	
 }

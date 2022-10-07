@@ -1,8 +1,12 @@
 package com.cybage.model;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -11,21 +15,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
-@Entity
-@Table(name = "user")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
-public class User {
+@Entity
+@Table
+public class Transaction {
 	@Id
 	@GeneratedValue
-	private int userId;
-	private String userName;
-	private String userPassword;
-	private String userEmail;
-	private String userMobileNo;
-	private int attemptsCount;	
+	private int transactionId;
+	private String type;
+	private Date date;
+	
+	@ManyToOne
+	@JoinColumn(name = "userId")
+	private User user;
 }
